@@ -4,3 +4,5 @@ part of 'game_bloc.dart';
 abstract class GameEvent {}
 
 class ButtonClicked extends GameEvent {}
+
+class TimeOut extends GameEvent {}

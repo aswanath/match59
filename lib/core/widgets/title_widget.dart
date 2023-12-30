@@ -15,7 +15,7 @@ class TitleWidget extends StatelessWidget {
         ),
         children: [
           TextSpan(
-            text: "5",
+            text: "59",
             style: TextStyle(
               color: Colors.redAccent,
               fontSize: 32,
