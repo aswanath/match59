@@ -85,7 +85,7 @@ class _GameScreenState extends State<GameScreen> {
                 if (state.attempts != -1)
                   ScoreCard(
                     title: state.isTimeOut ? "Sorry timeout" : (state.currentSecond == state.randomNumber ? "Success :)" : "Sorry try again!"),
-                    description: (state.isTimeOut || state.currentSecond != state.randomNumber) ? "Attempt: ${state.attempts}" : state.score,
+                    description: state.isTimeOut ? "Attempt: ${state.attempts} , Score: ${state.score}" : (state.currentSecond != state.randomNumber ? "Attempt: ${state.attempts}" : state.score),
                     color: state.isTimeOut ? Colors.amber : (state.currentSecond == state.randomNumber ? Colors.green : Colors.red),
                   ),
                 SizedBox(

@@ -50,10 +50,12 @@ class GameBloc extends Bloc<GameEvent, GameState> {
   FutureOr<void> _onTimeOut(TimeOut event, emit) async {
     int failedAttemptCount = _localRepository.getFailedAttemptCount() + 1;
     await _localRepository.setFailedAttemptCount(failedAttemptCount);
+    int successAttemptCount = _localRepository.getSuccessfulAttemptCount();
     emit(
       state.copyWith(
         isTimeOut: true,
         attempts: failedAttemptCount,
+        score: "$successAttemptCount / ${successAttemptCount + failedAttemptCount}",
       ),
     );
   }
